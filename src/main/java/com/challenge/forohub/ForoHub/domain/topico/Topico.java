@@ -32,6 +32,6 @@ public class Topico {
 
     private int usuarioId;
 
-    private int cursoId;
+    private Curso curso;
 
 }
