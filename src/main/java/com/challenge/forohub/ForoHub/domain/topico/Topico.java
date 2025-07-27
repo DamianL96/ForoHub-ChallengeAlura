@@ -26,6 +26,7 @@ public class Topico {
 
     private String mensaje;
 
+    @Column(name="fechaCreacion")
     private LocalDateTime fechaCreacion;
 
     private String status;
