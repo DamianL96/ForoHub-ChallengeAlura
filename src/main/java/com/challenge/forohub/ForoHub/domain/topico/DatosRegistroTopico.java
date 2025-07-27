@@ -10,6 +10,6 @@ public record DatosRegistroTopico(
         @NotBlank String mensaje,
         @NotNull LocalDateTime fechaCreacion,
         @NotBlank String status,
-        @NotBlank int usuarioId,
+        int usuarioId,
         @NotNull Curso curso
 ){}
