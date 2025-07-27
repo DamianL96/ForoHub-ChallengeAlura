@@ -14,10 +14,10 @@ public class ValidarDuplicados {
 
     public void validarTopico(DatosRegistroTopico datos){
         //buscar en el repository si el titulo y mensaje son iguales
-        if(datos.titulo().equals("Titulo de Topico")){
+        var tituloYMensaje = topicoRepository.existsByTituloAndMensaje(datos.titulo(), datos.mensaje());
+
+        if(tituloYMensaje){
             throw new ValidationException("Ese topico ya existe, cambia el titulo o mensaje");
         }
     }
-
-
 }
