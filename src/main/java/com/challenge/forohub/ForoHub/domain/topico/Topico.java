@@ -33,6 +33,8 @@ public class Topico {
 
     private int usuarioId;
 
+    @Column(name="curso")
+    @Enumerated(EnumType.STRING)
     private Curso curso;
 
 

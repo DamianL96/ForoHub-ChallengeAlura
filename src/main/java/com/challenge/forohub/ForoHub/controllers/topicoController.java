@@ -1,6 +1,7 @@
 package com.challenge.forohub.ForoHub.controllers;
 
 import com.challenge.forohub.ForoHub.domain.topico.DatosRegistroTopico;
+import com.challenge.forohub.ForoHub.domain.topico.RegistroDeTopicos;
 import com.challenge.forohub.ForoHub.domain.topico.Topico;
 import com.challenge.forohub.ForoHub.domain.topico.TopicoRepository;
 import jakarta.validation.Valid;
@@ -20,16 +21,14 @@ public class topicoController {
     @Autowired
     TopicoRepository topicoRepository;
 
+    @Autowired
+    RegistroDeTopicos registro;
 
     @Transactional
     @PostMapping
     public ResponseEntity<String> registrar(@RequestBody @Valid DatosRegistroTopico datos){
 
-        //creamos el objeto topico
-        var topico = new Topico(datos);
-
-        //lo mandamos a guardar repository.save
-        topicoRepository.save(topico);
+        registro.registrarTopico(datos); //validamos
 
         return ResponseEntity.ok("Topico registrado con existo");
     }
