@@ -34,4 +34,18 @@ public class Topico {
 
     private Curso curso;
 
+
+    public Topico( DatosRegistroTopico nuevoTopico){
+        this.id = null;
+        this.titulo = nuevoTopico.titulo();
+        this.mensaje = nuevoTopico.mensaje();
+        this.fechaCreacion = nuevoTopico.fechaCreacion();
+        this.status = nuevoTopico.status();
+        this.usuarioId = nuevoTopico.usuarioId();
+        this.curso = nuevoTopico.curso();
+    }
+
+
+
+
 }
