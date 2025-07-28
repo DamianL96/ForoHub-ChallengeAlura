@@ -33,7 +33,7 @@ public class topicoController {
     public ResponseEntity listar(){
         //hacer un dto para listar solo con titulo y fecha
         var listado = topicoRepository.findAll()
-                .stream().map(DatosDetalleTopico::new).toList();
+                .stream().map(DatosListaTopico::new).toList();
         return ResponseEntity.ok(listado);
     }
 
