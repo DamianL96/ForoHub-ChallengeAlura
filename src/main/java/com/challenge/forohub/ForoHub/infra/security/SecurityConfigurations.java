@@ -17,7 +17,7 @@ public class SecurityConfigurations {
         http.csrf(csrf -> csrf.disable())
             .authorizeHttpRequests( (requests)-> requests
                 .requestMatchers(HttpMethod.POST,"/topicos").permitAll()
-                .requestMatchers(HttpMethod.GET,"/topicos").permitAll()
+                .requestMatchers(HttpMethod.GET,"/topicos/**").permitAll()
                 .anyRequest().authenticated())
             .httpBasic(Customizer.withDefaults());
 

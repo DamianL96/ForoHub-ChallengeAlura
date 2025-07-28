@@ -31,8 +31,15 @@ public class topicoController {
 
     @GetMapping
     public ResponseEntity listar(){
+        //hacer un dto para listar solo con titulo y fecha
         var listado = topicoRepository.findAll()
                 .stream().map(DatosDetalleTopico::new).toList();
         return ResponseEntity.ok(listado);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity detalle(@PathVariable Long id){
+        var topico = topicoRepository.getReferenceById(id);
+        return ResponseEntity.ok(new DatosDetalleTopico(topico));
     }
 }
