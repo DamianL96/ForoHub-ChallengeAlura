@@ -18,6 +18,8 @@ public class SecurityConfigurations {
             .authorizeHttpRequests( (requests)-> requests
                 .requestMatchers(HttpMethod.POST,"/topicos").permitAll()
                 .requestMatchers(HttpMethod.GET,"/topicos/**").permitAll()
+                .requestMatchers(HttpMethod.PUT,"/topicos/**").permitAll()
+                .requestMatchers(HttpMethod.DELETE,"/topicos/**").permitAll()
                 .anyRequest().authenticated())
             .httpBasic(Customizer.withDefaults());
 

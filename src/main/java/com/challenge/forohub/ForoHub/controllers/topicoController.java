@@ -1,5 +1,6 @@
 package com.challenge.forohub.ForoHub.controllers;
 
+import com.challenge.forohub.ForoHub.domain.ValidationException;
 import com.challenge.forohub.ForoHub.domain.topico.*;
 import jakarta.validation.Valid;
 import org.apache.coyote.Response;
@@ -9,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequestMapping("/topicos")
 @RestController
@@ -41,5 +43,35 @@ public class topicoController {
     public ResponseEntity detalle(@PathVariable Long id){
         var topico = topicoRepository.getReferenceById(id);
         return ResponseEntity.ok(new DatosDetalleTopico(topico));
+    }
+
+    @Transactional
+    @PutMapping
+    public ResponseEntity actualizar(@RequestBody @Valid DatosActualizacionTopico datos){
+        Optional<Topico> topicoOptional = topicoRepository.findById(datos.id());
+
+        //verificar si existe
+        if(!topicoOptional.isPresent()){
+            return ResponseEntity.notFound().build();
+        }
+
+        //actualizamos el topico
+        var topico = topicoOptional.get();
+        topico.actualizar(datos);
+
+        //devolvemos ok
+        return ResponseEntity.ok(new DatosDetalleTopico(topico));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity eliminar(@PathVariable Long id){
+        Optional<Topico> topicoOptional = topicoRepository.findById(id);
+
+        if(!topicoOptional.isPresent()){
+            return ResponseEntity.notFound().build();
+        }
+
+        topicoRepository.deleteById(id);
+        return ResponseEntity.ok("Topico eliminado con exito");
     }
 }
