@@ -8,6 +8,7 @@ public record DatosActualizacionTopico(
 
         String titulo,
         String mensaje,
+        Estado status,
         Curso curso
 ) {
     public DatosActualizacionTopico(Topico topico){
@@ -15,6 +16,7 @@ public record DatosActualizacionTopico(
                 topico.getId(),
                 topico.getTitulo(),
                 topico.getMensaje(),
+                topico.getStatus(),
                 topico.getCurso()
         );
     }

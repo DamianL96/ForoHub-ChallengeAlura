@@ -30,7 +30,9 @@ public class Topico {
     @Column(name="fechaCreacion")
     private LocalDateTime fechaCreacion;
 
-    private String status;
+    @Column(name="status")
+    @Enumerated(EnumType.STRING)
+    private Estado status;
 
     private int usuarioId;
 
@@ -55,6 +57,9 @@ public class Topico {
         }
         if(datos.mensaje() != null){
             this.mensaje = datos.mensaje();
+        }
+        if(datos.status() != null){
+            this.status = datos.status();
         }
         if(datos.curso() != null){
             this.curso = datos.curso();

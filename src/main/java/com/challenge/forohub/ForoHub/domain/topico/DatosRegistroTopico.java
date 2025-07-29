@@ -9,7 +9,7 @@ public record DatosRegistroTopico(
         @NotBlank String titulo,
         @NotBlank String mensaje,
         @NotNull LocalDateTime fechaCreacion,
-        @NotBlank String status,
+        @NotNull Estado status,
         int usuarioId,
         @NotNull Curso curso
 ){}

@@ -25,13 +25,23 @@ public class Usuario implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
     private String email;
     private String password;
 
+    public Usuario(DatosRegistroUsuario datos){
+        this.id = null;
+        this.nombre = datos.nombre();
+        this.email = datos.email();
+        this.password = datos.password();
+    }
+
+
     public String getPass(){
         return this.password;
     }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

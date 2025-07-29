@@ -7,7 +7,7 @@ public record DatosDetalleTopico(
        String titulo,
        String mensaje,
        LocalDateTime fechaCreacion,
-       String status,
+       Estado status,
        Curso curso
 ) {
     public DatosDetalleTopico(Topico topico){
