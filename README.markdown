@@ -66,15 +66,13 @@ Consulta la documentación completa en Swagger o en la sección de **Endpoints**
 | Método | Endpoint              | Descripción                          |
 |--------|-----------------------|--------------------------------------|
 | POST   | `/usuario`            |Registra un usuario enviado en el body|
-|--------|-----------------------|--------------------------------------|
 | POST   | `/login`              |Inicia sesion con email y contraseña  |
-|--------|-----------------------|--------------------------------------|
 | GET    | `/topicos`            |Obtiene un listado de los topicos     |
 | GET    | `/topicos/{id}`       |Obtiene un topico especifico detallado|
 | POST   | `/topicos`            |Registra un nuevo topico              |
 | PUT    | `/topicos`            |Modifica un topico                    |
 | DELETE | `/topicos/{id}`       |Elimina un topico permanentemente     |
-|--------|-----------------------|--------------------------------------|
+
 *Más endpoints se añadirán a medida que se implementen nuevas funcionalidades.*
 
 ## 🛡️ Seguridad
