@@ -4,7 +4,7 @@ Bienvenido(a) al repositorio de **ForoHub**, una API construida con **Spring Boo
 
 ## 📋 Descripción
 
-Esta aplicación backend proporciona una API RESTful desarrollada con Spring Boot, diseñada para [crear topicos y preguntas]. Utiliza MySQL como base de datos, Spring Security y JWT para autenticacion, y FlyWay para migraciones de base datos. La API está documentada con OpenAPI (Swagger) para facilitar su uso y prueba.
+Esta aplicación backend proporciona una API RESTful desarrollada con Spring Boot, diseñada para crear topicos y preguntas simulando el comportamiento de un Foro. Utiliza MySQL como base de datos, Spring Security y JWT para autenticacion, y FlyWay para migraciones de base datos. La API está documentada con OpenAPI (Swagger) para facilitar su uso y prueba.
 
 ### ✨ Características Principales
 - **API RESTful**: Endpoints para gestionar recursos (usuarios, topicos).
