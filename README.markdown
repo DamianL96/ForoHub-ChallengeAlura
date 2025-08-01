@@ -1,17 +1,20 @@
-# 🚀 Mi Aplicación Backend con Spring Boot
+# 🚀 ForoHub (Backend con Spring Boot)
 
-Bienvenido(a) al repositorio de **Mi Aplicación Backend**, una API robusta y escalable construida con **Spring Boot**. Este proyecto está diseñado para [descripción breve del propósito, e.g., gestionar datos de usuarios, procesar transacciones, etc.]. ¡Explora las funcionalidades y comienza a usarla hoy mismo!
+Bienvenido(a) al repositorio de **ForoHub**, una API construida con **Spring Boot**. Este proyecto está diseñado para [crear topicos, discuciones y preguntas acerca de cursos informaticos].
 
 ## 📋 Descripción
 
-Esta aplicación backend proporciona una API RESTful desarrollada con Spring Boot, diseñada para [propósito principal, e.g., ofrecer servicios para una aplicación web/móvil]. Utiliza tecnologías modernas para garantizar rendimiento, seguridad y escalabilidad.
+Esta aplicación backend proporciona una API RESTful desarrollada con Spring Boot, diseñada para [crear topicos y preguntas]. Utiliza MySQL como base de datos, Spring Security y JWT para autenticacion, y FlyWay para migraciones de base datos. La API está documentada con OpenAPI (Swagger) para facilitar su uso y prueba.
 
 ### ✨ Características Principales
-- **API RESTful**: Endpoints bien estructurados para interactuar con la aplicación.
-- **Arquitectura Modular**: Código organizado para facilitar el mantenimiento y la escalabilidad.
-- **[Funcionalidad inicial]**: [Descripción breve, e.g., Gestión básica de usuarios].
+- **API RESTful**: Endpoints para gestionar recursos (usuarios, topicos).
+- **Autenticación segura**: Soporte para JWT y Spring Security.
+- **Persistencia de Datos**: Integracion con MySQL usanfo Spring Data JPA.
+- **Validación de Datos**: Validaciones para entradas de usuario y topicos.
+- **Documentación automatica**: API documentada con Swagger/OpenAPI.
+- **Migraciones de Base de Datos**: Gestión de esquemas con FlyWay.
 
-*Nota*: Este README se actualizará con nuevas funcionalidades a medida que se implementen.
+*Nota*: La API continúa en desarrollo por lo que este README se actualizará con nuevas funcionalidades a medida que se implementen.
 
 ## 🛠️ Requisitos
 
@@ -19,9 +22,9 @@ Para ejecutar este proyecto, necesitarás:
 
 - **Java**: Versión 17 o superior (LTS recomendado).
 - **Maven**: Versión 3.8.0 o superior.
-- **Spring Boot**: Versión 3.x.x (especificada en el `pom.xml`).
-- **[Base de datos, si aplica]**: Ejemplo: PostgreSQL, MySQL o H2 (base de datos en memoria).
-- **[Otros]**: Por ejemplo, Docker (si planeas usar contenedores).
+- **Spring Boot**: Versión 3.5.4
+- **MySQL**: Versión 8.0.42.
+- **IDE y SO**: IntelliJ, Windows 11.
 
 ## ⚙️ Instalación
 
@@ -29,8 +32,8 @@ Sigue estos pasos para configurar el proyecto en tu máquina local:
 
 1. **Clona el repositorio**:
    ```bash
-   git clone https://github.com/tu-usuario/tu-repositorio.git
-   cd tu-repositorio
+   git clone https://github.com/DamianL96/ForoHub-ChallengeAlura.git
+   cd ForoHub
    ```
 
 2. **Configura las dependencias**:
@@ -54,34 +57,35 @@ Sigue estos pasos para configurar el proyecto en tu máquina local:
 
 ## 🚀 Uso
 
-Una vez que la aplicación esté en ejecución, puedes interactuar con los endpoints de la API. Aquí algunos ejemplos:
+Una vez que la aplicación esté en ejecución, puedes interactuar con los endpoints de la API.
 
-- **[GET] /api/v1/hello**: Retorna un mensaje de bienvenida.
-  ```bash
-  curl http://localhost:8080/api/v1/hello
-  ```
-
-Consulta la documentación completa en [Postman/Swagger, si aplica] o en la sección de **Endpoints** más abajo.
+Consulta la documentación completa en Swagger o en la sección de **Endpoints** más abajo.
 
 ## 📚 Endpoints
 
 | Método | Endpoint              | Descripción                          |
 |--------|-----------------------|--------------------------------------|
-| GET    | `/api/v1/hello`       | Retorna un mensaje de bienvenida     |
-
+| POST   | `/usuario`            |Registra un usuario enviado en el body|
+|--------|-----------------------|--------------------------------------|
+| POST   | `/login`              |Inicia sesion con email y contraseña  |
+|--------|-----------------------|--------------------------------------|
+| GET    | `/topicos`            |Obtiene un listado de los topicos     |
+| GET    | `/topicos/{id}`       |Obtiene un topico especifico detallado|
+| POST   | `/topicos`            |Registra un nuevo topico              |
+| PUT    | `/topicos`            |Modifica un topico                    |
+| DELETE | `/topicos/{id}`       |Elimina un topico permanentemente     |
+|--------|-----------------------|--------------------------------------|
 *Más endpoints se añadirán a medida que se implementen nuevas funcionalidades.*
 
 ## 🛡️ Seguridad
 
-- **[Autenticación, si aplica]**: Por ejemplo, JWT para proteger los endpoints.
-- **[Validaciones]**: Entradas validadas para garantizar la integridad de los datos.
+- **Autenticación**: JWT para proteger los endpoints.
+- **Validaciones**: Entradas validadas para garantizar la integridad de los datos.
 
 ## 📈 Próximas funcionalidades
 
-- [ ] Gestión de usuarios (CRUD).
-- [ ] Autenticación y autorización con Spring Security.
-- [ ] Integración con base de datos relacional (PostgreSQL/MySQL).
-- [ ] Documentación automática con Swagger/OpenAPI.
+- [ ] Gestión de Respuestas (CRUD).
+- [ ] Organizacion y Filtro de Topicos y Respuestas.
 - [ ] Despliegue en contenedores con Docker.
 
 ## 🤝 Contribuir
@@ -95,7 +99,7 @@ Consulta la documentación completa en [Postman/Swagger, si aplica] o en la secc
 
 ## 📬 Contacto
 
-Si tienes preguntas o sugerencias, contáctame en [tu-email@ejemplo.com] o abre un issue en el repositorio.
+Si tienes preguntas o sugerencias, contáctame en [damianlambrecht@gmail.com] o abre un issue en el repositorio.
 
 ---
 
