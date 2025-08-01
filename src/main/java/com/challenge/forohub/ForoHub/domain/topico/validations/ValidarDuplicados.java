@@ -1,6 +1,6 @@
 package com.challenge.forohub.ForoHub.domain.topico.validations;
 
-import com.challenge.forohub.ForoHub.domain.ValidationException;
+import com.challenge.forohub.ForoHub.infra.exceptions.ValidationException;
 import com.challenge.forohub.ForoHub.domain.topico.DatosRegistroTopico;
 import com.challenge.forohub.ForoHub.domain.topico.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

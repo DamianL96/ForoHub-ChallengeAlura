@@ -1,5 +1,6 @@
 package com.challenge.forohub.ForoHub.domain.topico;
 
+import com.challenge.forohub.ForoHub.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -34,20 +35,22 @@ public class Topico {
     @Enumerated(EnumType.STRING)
     private Estado status;
 
-    private int usuarioId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
     @Column(name="curso")
     @Enumerated(EnumType.STRING)
     private Curso curso;
 
 
-    public Topico( DatosRegistroTopico nuevoTopico){
+    public Topico( DatosRegistroTopico nuevoTopico, Usuario usuario){
         this.id = null;
         this.titulo = nuevoTopico.titulo();
         this.mensaje = nuevoTopico.mensaje();
         this.fechaCreacion = nuevoTopico.fechaCreacion();
         this.status = nuevoTopico.status();
-        this.usuarioId = nuevoTopico.usuarioId();
+        this.usuario = usuario;
         this.curso = nuevoTopico.curso();
     }
 

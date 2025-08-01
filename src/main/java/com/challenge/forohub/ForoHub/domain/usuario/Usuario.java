@@ -37,7 +37,6 @@ public class Usuario implements UserDetails {
         this.password = datos.password();
     }
 
-
     public String getPass(){
         return this.password;
     }
