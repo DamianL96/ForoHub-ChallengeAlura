@@ -9,7 +9,6 @@ public record DatosRegistroTopico(
         @NotBlank String titulo,
         @NotBlank String mensaje,
 
-        @NotNull LocalDateTime fechaCreacion,
         @NotNull Estado status,
         @NotNull Long idUsuario,
         @NotNull Curso curso

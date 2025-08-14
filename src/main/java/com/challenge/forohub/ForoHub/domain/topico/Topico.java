@@ -48,7 +48,7 @@ public class Topico {
         this.id = null;
         this.titulo = nuevoTopico.titulo();
         this.mensaje = nuevoTopico.mensaje();
-        this.fechaCreacion = nuevoTopico.fechaCreacion();
+        this.fechaCreacion = LocalDateTime.now();
         this.status = nuevoTopico.status();
         this.usuario = usuario;
         this.curso = nuevoTopico.curso();
