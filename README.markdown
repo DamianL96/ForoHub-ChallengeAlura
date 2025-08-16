@@ -84,7 +84,7 @@ Consulta la documentación completa en Swagger o en la sección de **Endpoints**
 
 ## 📈 Próximas funcionalidades
 
-- [✔️] Gestión de Respuestas (CRUD).  
+- [x] ~Gestión de Respuestas (CRUD).~  
 - [ ] Organizacion y Filtro de Topicos y Respuestas.
 - [ ] Despliegue en contenedores con Docker.
 
