@@ -1,5 +1,9 @@
 package com.challenge.forohub.ForoHub.controllers;
 
+import com.challenge.forohub.ForoHub.domain.respuesta.DatosListarRespuesta;
+import com.challenge.forohub.ForoHub.domain.respuesta.DatosRegistroRespuesta;
+import com.challenge.forohub.ForoHub.domain.respuesta.Respuesta;
+import com.challenge.forohub.ForoHub.domain.respuesta.RespuestaService;
 import com.challenge.forohub.ForoHub.domain.topico.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RequestMapping("/topicos")
@@ -18,6 +23,9 @@ public class TopicoController {
 
     @Autowired
     RegistroDeTopicos registro;
+
+    @Autowired
+    RespuestaService respuestaService;
 
     @Transactional
     @PostMapping
@@ -71,4 +79,23 @@ public class TopicoController {
         topicoRepository.deleteById(id);
         return ResponseEntity.ok("Topico eliminado con exito");
     }
+
+
+    @GetMapping("/{id}/respuestas")
+    public ResponseEntity listaRespuestas(@PathVariable Long id){
+        var todasLasRespuestas= respuestaService.obtenerPorTopico(id)
+                .stream()
+                .map(DatosListarRespuesta::new)
+                .toList();
+        return ResponseEntity.ok(todasLasRespuestas);
+    }
+
+    @Transactional
+    @PostMapping("/{id}/respuestas")
+    public  ResponseEntity<String> crearRespuesta(@RequestBody @Valid DatosRegistroRespuesta respuesta){
+        respuestaService.registrarRespuesta(respuesta);
+        return ResponseEntity.ok("Respuesta creada con exito");
+    }
+
+
 }

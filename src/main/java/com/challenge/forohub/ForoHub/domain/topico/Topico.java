@@ -1,5 +1,6 @@
 package com.challenge.forohub.ForoHub.domain.topico;
 
+import com.challenge.forohub.ForoHub.domain.respuesta.Respuesta;
 import com.challenge.forohub.ForoHub.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
@@ -9,6 +10,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Table(name = "topicos")
 @Entity(name ="Topico")
@@ -43,6 +45,9 @@ public class Topico {
     @Enumerated(EnumType.STRING)
     private Curso curso;
 
+    @OneToMany(mappedBy = "topico", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Respuesta> respuestas;
+
 
     public Topico( DatosRegistroTopico nuevoTopico, Usuario usuario){
         this.id = null;
@@ -68,6 +73,5 @@ public class Topico {
             this.curso = datos.curso();
         }
     }
-
 
 }
