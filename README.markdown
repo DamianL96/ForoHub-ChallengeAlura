@@ -1,6 +1,6 @@
 # 🚀 ForoHub (Backend con Spring Boot)
 
-Bienvenido/a al repositorio de **ForoHub**, una API construida con **Spring Boot**. Este proyecto está diseñado para crear topicos, discuciones y preguntas acerca de cursos informaticos.
+Bienvenido/a al repositorio de **ForoHub**, una API construida con **Spring Boot**. Esta API está diseñada para crear topicos, discuciones y preguntas acerca de cursos informaticos.
 
 ## 📋 Descripción
 
